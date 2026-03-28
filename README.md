@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head> <meta name="description" content="Kakeru Shinoharaのポートフォリオ。画像生成AIや動画生成AIを活用したSNSプロジェクト『まわループ』や『tukikage.art』などの活動をまとめています。">
+<meta name="keywords" content="Kakeru Shinohara, 篠原翔, AIクリエイター, まわループ, 画像生成AI, SNS収益化">
+<link rel="canonical" href="https://あなたのユーザー名.github.io/リポジトリ名/">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kakeru Shinohara | AI Creator & Digital Project Builder</title>
