@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ja">
 <head><meta name="google-site-verification" content="H8KB4WG-ImEgHXB_7marNjMajn8xP_RULeC6kNUR1Kc" /> <meta name="description" content="Kakeru Shinoharaのポートフォリオ。画像生成AIや動画生成AIを活用したSNSプロジェクト『まわループ』や『tukikage.art』などの活動をまとめています。">
 <meta name="keywords" content="Kakeru Shinohara, 篠原翔, AIクリエイター, まわループ, 画像生成AI, SNS収益化">
@@ -234,7 +234,6 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-        /* Active nav link */
         .nav-links a.nav-active {
             color: var(--text-main);
         }
@@ -242,7 +241,6 @@
             width: 100%;
         }
 
-        /* Hamburger menu */
         .hamburger {
             display: none;
             background: none;
@@ -286,7 +284,6 @@
             to { opacity: 0; transform: translateY(-15px); }
         }
 
-        /* Breadcrumb */
         .breadcrumb {
             padding: 80px 20px 0;
             max-width: 960px;
@@ -316,7 +313,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* Animated gradient bg */
         .hero::before {
             content: '';
             position: absolute;
@@ -332,7 +328,6 @@
             0% { transform: scale(1) translate(0, 0); }
             100% { transform: scale(1.1) translate(-20px, 10px); }
         }
-        /* Grid pattern */
         .hero::after {
             content: '';
             position: absolute;
@@ -409,7 +404,6 @@
             margin-right: auto;
         }
 
-        /* Buttons */
         .btn-main {
             display: inline-block;
             padding: 16px 44px;
@@ -432,7 +426,6 @@
             box-shadow: 0 8px 30px rgba(124, 58, 237, 0.5);
         }
 
-        /* See more link */
         .see-more-link {
             display: inline-flex;
             align-items: center;
@@ -475,7 +468,6 @@
             font-size: 0.95rem;
         }
 
-        /* Home featured projects (compact grid) */
         .home-projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -483,7 +475,6 @@
             margin-bottom: 16px;
         }
 
-        /* Home skills overview */
         .home-skills-wrap {
             display: flex;
             flex-wrap: wrap;
@@ -540,7 +531,6 @@
             margin-bottom: 10px;
         }
 
-        /* Section separators */
         .section-sep {
             border-top: 1px solid rgba(124, 58, 237, 0.1);
         }
@@ -578,7 +568,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* Animated gradient border */
         .project-card::before {
             content: '';
             position: absolute;
@@ -588,6 +577,7 @@
             background: conic-gradient(from var(--angle, 0deg), #7C3AED, #22D3EE, #7C3AED);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
+            -webkit-mask-composite: exclude;
             mask-composite: exclude;
             animation: rotate-border 4s linear infinite;
             opacity: 0;
@@ -616,7 +606,6 @@
             flex-grow: 1;
         }
 
-        /* Tags */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -638,7 +627,6 @@
             background: rgba(34, 211, 238, 0.15);
         }
 
-        /* Card buttons */
         .card-links {
             display: flex;
             gap: 12px;
@@ -774,7 +762,6 @@
             transform: scale(1.15);
             filter: brightness(1.1);
         }
-        /* Image overlay on hover */
         .gallery-item-overlay {
             position: absolute;
             inset: 0;
@@ -786,7 +773,6 @@
         .gallery-item:hover .gallery-item-overlay {
             opacity: 1;
         }
-        /* Placeholder */
         .gallery-placeholder-text {
             position: absolute;
             top: 50%;
@@ -855,6 +841,7 @@
             background: conic-gradient(from var(--angle, 0deg), transparent, rgba(124, 58, 237, 0.3), transparent, rgba(34, 211, 238, 0.3), transparent);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
+            -webkit-mask-composite: exclude;
             mask-composite: exclude;
             animation: rotate-border 6s linear infinite;
             opacity: 0.6;
@@ -964,7 +951,6 @@
             .gallery-grid { grid-template-columns: 1fr 1fr; }
             .contact-section { padding: 50px 20px; }
 
-            /* Hamburger visible */
             .hamburger { display: block; }
             .nav-links {
                 display: flex;
@@ -986,7 +972,6 @@
             .nav-links.open { right: 0; }
             .nav-links a { font-size: 1rem; }
 
-            /* Hamburger X transform */
             .hamburger.active span:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 5px);
             }
@@ -995,7 +980,6 @@
                 transform: rotate(-45deg) translate(5px, -5px);
             }
 
-            /* Mobile overlay */
             .nav-overlay {
                 display: none;
                 position: fixed;
@@ -1014,15 +998,12 @@
 </head>
 <body>
 
-    <!-- Loader -->
     <div id="loader">
         <div class="spinner"></div>
     </div>
 
-    <!-- Mobile overlay -->
     <div class="nav-overlay" id="navOverlay"></div>
 
-    <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-inner">
             <a href="#/home" class="nav-logo">KS</a>
@@ -1040,15 +1021,9 @@
         </div>
     </nav>
 
-    <!-- Back to Top -->
     <button id="back-to-top" aria-label="Back to top">&#8593;</button>
 
-    <!-- ============================================
-         PAGE: Home
-    ============================================= -->
     <div class="page" data-page="home">
-
-        <!-- Hero -->
         <div class="hero">
             <div class="hero-glass fade-in-up">
                 <img src="profile.jpg" alt="Kakeru Shinohara" class="hero-avatar" loading="lazy">
@@ -1060,19 +1035,16 @@
             </div>
         </div>
 
-        <!-- Home: Mission teaser -->
         <div class="home-section fade-in-up">
             <h2 class="home-section-header">Mission</h2>
             <p class="home-section-sub">AIを使って、個人が価値を生み出せる時代をつくる。<br>ただ語るのではなく、実際のプロジェクトとして実践し続けること。</p>
             <a href="#/about" class="see-more-link">詳しく見る</a>
         </div>
 
-        <!-- Home: Featured Projects -->
         <div class="home-section fade-in-up">
             <h2 class="home-section-header">Featured Projects</h2>
             <p class="home-section-sub">現在進行中の注目プロジェクト</p>
             <div class="home-projects-grid">
-
                 <div class="project-card stagger-item">
                     <h3>まわループ。</h3>
                     <div class="tags">
@@ -1083,7 +1055,6 @@
                         <a href="https://www.tiktok.com/@mawaloop.jp" target="_blank" class="btn-sub">&#9654; TikTokを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>tukikage.art</h3>
                     <div class="tags">
@@ -1094,7 +1065,6 @@
                         <a href="https://www.tiktok.com/@tsukikage.art" target="_blank" class="btn-sub">&#9654; TikTokを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>note × X 収益化実践</h3>
                     <div class="tags">
@@ -1106,7 +1076,6 @@
                         <a href="https://x.com/kakechan_note" target="_blank" class="btn-sub">&#9654; Xを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>メルカリ販売実践プロジェクト</h3>
                     <div class="tags">
@@ -1117,12 +1086,10 @@
                         <a href="https://jp.mercari.com/user/profile/809675688" target="_blank" class="btn-sub">&#9654; メルカリを見る</a>
                     </div>
                 </div>
-
             </div>
-            <a href="#/projects" class="see-more-link">全14プロジェクトを見る</a>
+            <a href="#/projects" class="see-more-link">全11プロジェクトを見る</a>
         </div>
 
-        <!-- Home: Skills overview -->
         <div class="home-section fade-in-up">
             <h2 class="home-section-header">Skills</h2>
             <p class="home-section-sub">AI / Creative / Content / Project</p>
@@ -1137,18 +1104,12 @@
             </div>
             <a href="#/skills" class="see-more-link">スキル詳細を見る</a>
         </div>
-
     </div>
 
-    <!-- ============================================
-         PAGE: About
-    ============================================= -->
     <div class="page" data-page="about">
         <div class="breadcrumb">
             <a href="#/home">Home</a><span class="sep">/</span><span class="current">About</span>
         </div>
-
-        <!-- Mission -->
         <section class="fade-in-up section-sep">
             <h2 class="section-title">Mission</h2>
             <div class="text-center-block">
@@ -1158,14 +1119,11 @@
                 <p>AIを使うこと自体が目的ではなく、<br><span class="highlight">AIを活用して「自分の表現」と「自分の活動」を作れる状態</span><br>を目指しています。</p>
             </div>
         </section>
-
-        <!-- About -->
         <section class="fade-in-up section-sep-line">
             <h2 class="section-title">About</h2>
             <div class="text-center-block">
                 <p>AI技術とインターネットを活用した<br>デジタルコンテンツ制作・個人ビジネス・情報発信の研究と実践を行っています。</p>
                 <p>画像生成AI、動画生成AI、文章生成AIなどを活用しながら、<br><span class="highlight">「個人がゼロから価値を生み出す仕組み」</span>をテーマに<br>複数のプロジェクトを運営しています。</p>
-
                 <p style="margin-top: 40px; margin-bottom: 10px;">私の活動の特徴は、</p>
                 <ul class="list-style-none">
                     <li>・実際にプロジェクトを立ち上げる</li>
@@ -1173,12 +1131,9 @@
                     <li>・成功と失敗のプロセスを研究する</li>
                 </ul>
                 <p style="margin-top: 10px;">という <span class="highlight">実験型のアプローチ</span> です。</p>
-
                 <p style="margin-top: 30px;">AI時代における個人の可能性を、<br>創作・発信・収益化の3つの視点から探りながら<br>プロジェクトとして積み上げています。</p>
             </div>
         </section>
-
-        <!-- Strengths -->
         <section class="fade-in-up">
             <h2 class="section-title">Strengths</h2>
             <div class="strengths-grid">
@@ -1188,8 +1143,6 @@
                 <div class="strength-item stagger-item">継続してプロジェクトを<br>積み上げられること</div>
             </div>
         </section>
-
-        <!-- Vision -->
         <section class="fade-in-up vision-section">
             <h2 class="section-title">Vision</h2>
             <div class="text-center-block">
@@ -1200,18 +1153,13 @@
         </section>
     </div>
 
-    <!-- ============================================
-         PAGE: Projects
-    ============================================= -->
     <div class="page" data-page="projects">
         <div class="breadcrumb">
             <a href="#/home">Home</a><span class="sep">/</span><span class="current">Projects</span>
         </div>
-
         <section class="fade-in-up">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
-
                 <div class="project-card stagger-item">
                     <h3>まわループ。</h3>
                     <div class="tags">
@@ -1222,7 +1170,6 @@
                         <a href="https://www.tiktok.com/@mawaloop.jp" target="_blank" class="btn-sub">&#9654; TikTokを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>tukikage.art</h3>
                     <div class="tags">
@@ -1233,7 +1180,6 @@
                         <a href="https://www.tiktok.com/@tsukikage.art" target="_blank" class="btn-sub">&#9654; TikTokを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>AI副業研究所</h3>
                     <div class="tags">
@@ -1244,7 +1190,6 @@
                         <span class="btn-coming-soon">&#9654; Coming Soon</span>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>note × X 収益化実践</h3>
                     <div class="tags">
@@ -1256,7 +1201,6 @@
                         <a href="https://x.com/kakechan_note" target="_blank" class="btn-sub">&#9654; Xを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>メルカリ販売実践プロジェクト</h3>
                     <div class="tags">
@@ -1267,18 +1211,6 @@
                         <a href="https://jp.mercari.com/user/profile/809675688" target="_blank" class="btn-sub">&#9654; メルカリを見る</a>
                     </div>
                 </div>
-
-                <div class="project-card stagger-item">
-                    <h3>デイリーチョイス</h3>
-                    <div class="tags">
-                        <span class="tag">Instagram</span><span class="tag">Affiliate</span>
-                    </div>
-                    <p>Instagramを活用した商品紹介・情報発信プロジェクト。</p>
-                    <div class="card-links">
-                        <a href="https://www.instagram.com/choisudeiri/" target="_blank" class="btn-sub">&#9654; Instagramを見る</a>
-                    </div>
-                </div>
-
                 <div class="project-card stagger-item">
                     <h3>ポイカツ収益化計画</h3>
                     <div class="tags">
@@ -1289,7 +1221,6 @@
                         <a href="https://x.com/reo_poipoti" target="_blank" class="btn-sub">&#9654; Xを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>AIマスター</h3>
                     <div class="tags">
@@ -1300,7 +1231,6 @@
                         <a href="https://x.com/aimasuta631" target="_blank" class="btn-sub">&#9654; Xを見る</a>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>レンAI × ポイカツ最適化ナビ</h3>
                     <div class="tags">
@@ -1311,18 +1241,6 @@
                         <a href="https://x.com/ai_poikatsu_opt" target="_blank" class="btn-sub">&#9654; Xを見る</a>
                     </div>
                 </div>
-
-                <div class="project-card stagger-item">
-                    <h3>AI初心者「60代主婦が始めました」</h3>
-                    <div class="tags">
-                        <span class="tag">note</span><span class="tag">Beginner</span>
-                    </div>
-                    <p>AI初心者向けに、AIの使い方や可能性をわかりやすく伝えるプロジェクト。</p>
-                    <div class="card-links">
-                        <a href="https://note.com/loyal_cosmos5598" target="_blank" class="btn-sub">&#9654; noteを見る</a>
-                    </div>
-                </div>
-
                 <div class="project-card stagger-item">
                     <h3>TikTok AI初心者向け発信</h3>
                     <div class="tags">
@@ -1333,7 +1251,6 @@
                         <span class="btn-coming-soon">&#9654; Coming Soon</span>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>note運用 / 情報発信</h3>
                     <div class="tags">
@@ -1344,7 +1261,6 @@
                         <span class="btn-coming-soon">&#9654; Coming Soon</span>
                     </div>
                 </div>
-
                 <div class="project-card stagger-item">
                     <h3>AI活用の仕組み化</h3>
                     <div class="tags">
@@ -1355,30 +1271,14 @@
                         <span class="btn-coming-soon">&#9654; Coming Soon</span>
                     </div>
                 </div>
-
-                <div class="project-card stagger-item">
-                    <h3>エルマート関連発信</h3>
-                    <div class="tags">
-                        <span class="tag">Video</span><span class="tag">SNS</span>
-                    </div>
-                    <p>商品紹介や情報発信におけるAI動画・SNS活用の実験プロジェクト。</p>
-                    <div class="card-links">
-                        <span class="btn-coming-soon">&#9654; Coming Soon</span>
-                    </div>
-                </div>
-
             </div>
         </section>
     </div>
 
-    <!-- ============================================
-         PAGE: Skills
-    ============================================= -->
     <div class="page" data-page="skills">
         <div class="breadcrumb">
             <a href="#/home">Home</a><span class="sep">/</span><span class="current">Skills</span>
         </div>
-
         <section class="fade-in-up">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
@@ -1404,14 +1304,10 @@
         </section>
     </div>
 
-    <!-- ============================================
-         PAGE: Gallery
-    ============================================= -->
     <div class="page" data-page="gallery">
         <div class="breadcrumb">
             <a href="#/home">Home</a><span class="sep">/</span><span class="current">Gallery</span>
         </div>
-
         <section class="fade-in-up">
             <h2 class="section-title">Gallery</h2>
             <div class="gallery-grid">
@@ -1435,14 +1331,10 @@
         </section>
     </div>
 
-    <!-- ============================================
-         PAGE: Contact
-    ============================================= -->
     <div class="page" data-page="contact">
         <div class="breadcrumb">
             <a href="#/home">Home</a><span class="sep">/</span><span class="current">Contact</span>
         </div>
-
         <section class="fade-in-up">
             <div class="contact-section">
                 <h2>Contact</h2>
@@ -1457,40 +1349,31 @@
         </section>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         &copy; 2025 Kakeru Shinohara. All rights reserved.
     </div>
 
     <script>
-        // =========================================
-        // SPA Router
-        // =========================================
         const Router = {
             routes: ['home', 'about', 'projects', 'skills', 'gallery', 'contact'],
             currentPage: null,
-
             init() {
                 window.addEventListener('hashchange', () => this.navigate());
                 this.navigate();
             },
-
             getPageFromHash() {
                 const hash = location.hash.replace('#/', '').replace('#', '');
                 return this.routes.includes(hash) ? hash : 'home';
             },
-
             navigate() {
                 const page = this.getPageFromHash();
                 if (page === this.currentPage) return;
                 this.transition(page);
             },
-
             transition(newPage) {
                 const oldEl = document.querySelector('.page.active');
                 const newEl = document.querySelector(`[data-page="${newPage}"]`);
                 if (!newEl) return;
-
                 if (oldEl && oldEl !== newEl) {
                     oldEl.classList.add('page-exit');
                     oldEl.addEventListener('animationend', function handler() {
@@ -1499,8 +1382,6 @@
                         oldEl.removeEventListener('animationend', handler);
                     });
                 }
-
-                // Small delay for exit animation to start
                 const delay = oldEl && oldEl !== newEl ? 150 : 0;
                 setTimeout(() => {
                     newEl.style.display = 'block';
@@ -1509,15 +1390,12 @@
                         newEl.classList.remove('page-enter');
                         newEl.removeEventListener('animationend', handler);
                     });
-
                     window.scrollTo({ top: 0, behavior: 'instant' });
                     this.triggerAnimations(newEl);
                 }, delay);
-
                 this.currentPage = newPage;
                 this.updateNav(newPage);
             },
-
             updateNav(page) {
                 document.querySelectorAll('.nav-links a[data-nav]').forEach(a => {
                     if (a.getAttribute('data-nav') === page) {
@@ -1527,16 +1405,12 @@
                     }
                 });
             },
-
             triggerAnimations(pageEl) {
-                // Reset and re-observe fade-in-up elements
                 pageEl.querySelectorAll('.fade-in-up').forEach(el => {
                     el.classList.remove('show');
-                    void el.offsetWidth; // force reflow
+                    void el.offsetWidth;
                     fadeObserver.observe(el);
                 });
-
-                // Reset and re-observe stagger items
                 const containers = pageEl.querySelectorAll('.projects-grid, .home-projects-grid, .strengths-grid, .gallery-grid, .skill-tags, .home-skills-wrap');
                 containers.forEach(container => {
                     container.querySelectorAll('.stagger-item').forEach(item => {
@@ -1548,9 +1422,6 @@
             }
         };
 
-        // =========================================
-        // Intersection Observers
-        // =========================================
         const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1572,9 +1443,6 @@
             });
         }, { threshold: 0.1 });
 
-        // =========================================
-        // Loader & Init
-        // =========================================
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
@@ -1584,38 +1452,25 @@
             }, 500);
         });
 
-        // =========================================
-        // Nav scroll effect
-        // =========================================
         window.addEventListener('scroll', () => {
             document.querySelector('.main-nav').classList.toggle('nav-scrolled', window.scrollY > 50);
-
-            // Back to top visibility
             const btn = document.getElementById('back-to-top');
             btn.classList.toggle('visible', window.scrollY > 400);
         });
 
-        // =========================================
-        // Back to top
-        // =========================================
         document.getElementById('back-to-top').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // =========================================
-        // Hamburger menu
-        // =========================================
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
-
         function closeMenu() {
             hamburger.classList.remove('active');
             navLinks.classList.remove('open');
             navOverlay.classList.remove('show');
             hamburger.setAttribute('aria-expanded', 'false');
         }
-
         hamburger.addEventListener('click', () => {
             const isOpen = navLinks.classList.contains('open');
             if (isOpen) {
@@ -1627,16 +1482,10 @@
                 hamburger.setAttribute('aria-expanded', 'true');
             }
         });
-
         navOverlay.addEventListener('click', closeMenu);
-
         navLinks.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', closeMenu);
         });
-
-        // =========================================
-        // Internal navigation links (see-more, btn-main with hash)
-        // =========================================
         document.addEventListener('click', (e) => {
             const link = e.target.closest('a[href^="#/"]');
             if (link) {
