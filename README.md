@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><meta name="google-site-verification" content="H8KB4WG-ImEgHXB_7marNjMajn8xP_RULeC6kNUR1Kc" /> <meta name="description" content="Kakeru Shinoharaのポートフォリオ。画像生成AIや動画生成AIを活用したSNSプロジェクト『まわループ』や『tukikage.art』などの活動をまとめています。">
-<meta name="keywords" content="Kakeru Shinohara, 篠原翔, AIクリエイター, まわループ, 画像生成AI, SNS収益化">
-<link rel="canonical" href="https://あなたのユーザー名.github.io/リポジトリ名/">
+<head>
+    <meta name="google-site-verification" content="H8KB4WG-ImEgHXB_7marNjMajn8xP_RULeC6kNUR1Kc" />
+    <meta name="description" content="Kakeru Shinoharaのポートフォリオ。画像生成AIや動画生成AIを活用したSNSプロジェクト『まわループ』や『tukikage.art』などの活動をまとめています。">
+    <meta name="keywords" content="Kakeru Shinohara, 篠原翔, AIクリエイター, まわループ, 画像生成AI, SNS収益化">
+    <link rel="canonical" href="https://あなたのユーザー名.github.io/リポジトリ名/">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -989,10 +991,142 @@
             }
             .nav-overlay.show { display: block; }
         }
+        
+        /* =========================================
+           Chatbot Styles
+        ========================================= */
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-sub));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        #chatbot-toggle:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(124, 58, 237, 0.6);
+        }
+        #chatbot-window {
+            position: fixed;
+            bottom: 150px;
+            right: 30px;
+            width: 320px;
+            max-height: 450px;
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #chatbot-window.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .chat-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header .close-btn {
+            cursor: pointer;
+            color: var(--text-sub);
+            font-size: 1.2rem;
+        }
+        .chat-header .close-btn:hover { color: var(--text-main); }
+        .chat-body {
+            padding: 16px;
+            overflow-y: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .chat-body::-webkit-scrollbar { width: 4px; }
+        .chat-body::-webkit-scrollbar-track { background: transparent; }
+        .chat-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+
+        .chat-msg {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            animation: fadeInMsg 0.3s ease forwards;
+        }
+        @keyframes fadeInMsg {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .msg-bot {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--text-main);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .msg-user {
+            background: linear-gradient(135deg, var(--accent), var(--accent-sub));
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .chat-option-btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--text-main);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+        .chat-option-btn:hover {
+            background: rgba(124, 58, 237, 0.2);
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+        }
+
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.9rem; }
             .strengths-grid { grid-template-columns: 1fr; }
             .gallery-grid { grid-template-columns: 1fr; }
+            #chatbot-window {
+                width: calc(100% - 40px);
+                right: 20px;
+                bottom: 150px;
+            }
         }
     </style>
 </head>
@@ -1020,8 +1154,6 @@
             </button>
         </div>
     </nav>
-
-    <button id="back-to-top" aria-label="Back to top">&#8593;</button>
 
     <div class="page" data-page="home">
         <div class="hero">
@@ -1353,6 +1485,18 @@
         &copy; 2025 Kakeru Shinohara. All rights reserved.
     </div>
 
+    <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+
+    <button id="chatbot-toggle" aria-label="Open Chat">💬</button>
+    <div id="chatbot-window">
+        <div class="chat-header">
+            <span>AI Assistant</span>
+            <span class="close-btn" id="chatbot-close">&times;</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+            </div>
+    </div>
+
     <script>
         const Router = {
             routes: ['home', 'about', 'projects', 'skills', 'gallery', 'contact'],
@@ -1494,6 +1638,101 @@
                 location.hash = hash;
             }
         });
+
+        /* =========================================
+           Chatbot Logic (Rule-based)
+        ========================================= */
+        const chatToggle = document.getElementById('chatbot-toggle');
+        const chatWindow = document.getElementById('chatbot-window');
+        const chatClose = document.getElementById('chatbot-close');
+        const chatBody = document.getElementById('chat-body');
+
+        // チャットウィンドウの開閉
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('open');
+            if(chatBody.innerHTML.trim() === '') {
+                startChat(); // 初回開いた時だけ挨拶を表示
+            }
+        });
+        chatClose.addEventListener('click', () => {
+            chatWindow.classList.remove('open');
+        });
+
+        // メッセージを画面に追加する関数
+        function appendMessage(sender, text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('chat-msg', sender === 'bot' ? 'msg-bot' : 'msg-user');
+            msgDiv.innerHTML = text.replace(/\n/g, '<br>');
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // 選択肢ボタンを画面に追加する関数
+        function appendOptions(options) {
+            const optionsContainer = document.createElement('div');
+            optionsContainer.classList.add('chat-options');
+            
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.classList.add('chat-option-btn');
+                btn.innerText = opt.label;
+                btn.addEventListener('click', () => {
+                    appendMessage('user', opt.label);
+                    optionsContainer.remove();
+                    setTimeout(() => handleScenario(opt.next), 500);
+                });
+                optionsContainer.appendChild(btn);
+            });
+            
+            chatBody.appendChild(optionsContainer);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // シナリオ（ルール）の設定
+        function startChat() {
+            appendMessage('bot', 'こんにちは！\nKakeru Shinoharaのポートフォリオへようこそ。\n何について知りたいですか？');
+            appendOptions([
+                { label: '主な活動内容について', next: 'about_activity' },
+                { label: 'SNSアカウントを教えて', next: 'sns_links' },
+                { label: 'お問い合わせ窓口', next: 'contact_info' }
+            ]);
+        }
+
+        function handleScenario(nextKey) {
+            if (nextKey === 'about_activity') {
+                appendMessage('bot', 'AI（画像・動画・文章）を活用し、個人がゼロから価値を生み出す仕組みを研究・実践しています。\n「まわループ」などのTikTok運用や、noteでの発信を行っています。');
+                appendOptions([
+                    { label: 'プロジェクト一覧を見る', next: 'go_projects' },
+                    { label: '最初に戻る', next: 'start' }
+                ]);
+            } 
+            else if (nextKey === 'sns_links') {
+                appendMessage('bot', '主に以下のSNSで発信しています！\n・X（収益化・AI情報）\n・TikTok（AIアート・ショート動画）\n・note（実践記録）');
+                appendOptions([
+                    { label: 'リンク先を見る', next: 'go_contact' },
+                    { label: '最初に戻る', next: 'start' }
+                ]);
+            }
+            else if (nextKey === 'contact_info') {
+                appendMessage('bot', 'お問い合わせはX（Twitter）のDM、またはnote経由で受け付けております。');
+                appendOptions([
+                    { label: 'Contactページへ', next: 'go_contact' },
+                    { label: '最初に戻る', next: 'start' }
+                ]);
+            }
+            // --- ページ遷移アクション ---
+            else if (nextKey === 'go_projects') {
+                window.location.hash = '#/projects';
+                chatWindow.classList.remove('open'); // チャットを閉じる
+            }
+            else if (nextKey === 'go_contact') {
+                window.location.hash = '#/contact';
+                chatWindow.classList.remove('open');
+            }
+            else if (nextKey === 'start') {
+                startChat();
+            }
+        }
     </script>
 </body>
 </html>
